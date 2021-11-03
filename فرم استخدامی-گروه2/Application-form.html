@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>جدول</title>
+</head>
+<body>
+<form dir="rtl">
+    <table border="11" cellpadding="10" cellspacing="0">
+        <tr>
+            <th align="center" colspan="7">فرم استخدامی</th>
+        </tr>
+        <tr>
+            <td colspan="2">اطلاعات اولیه</td>
+            <td colspan="2">سوابق تحصیلی</td>
+            <td rowspan="4">مهارت ها</td>
+            <td rowspan="2">زبانهای محاوره:</td>
+            <td rowspan="2">
+                <input type="checkbox" name="checkBox1" id="checkBox1">
+                <label for="checkBox1"> انگلیسی</label>
+                <input type="checkbox" name="checkBox2" id="checkBox2">
+                <label for="checkBox2"> عربی</label><br>
+                <input type="checkbox" name="checkBox3" id="checkBox3">
+                <label for="checkBox3"> فرانسه</label>
+                <input type="checkbox" name="checkBox4" id="checkBox4">
+                <label for="checkBox4"> آلمانی</label>
+            </td>
+        </tr>
+        <tr>
+            <td>نام و نام خوانوادگی*:</td>
+            <td><input type="text" required name="lastName"></td>
+            <td rowspan="2">مقطع تحصیلی:</td>
+            <td rowspan="2">
+                <select>
+                    <option>کاردانی</option>
+                    <option>کارشناسی</option>
+                    <option>کارشناسی ارشد</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>جنسیت:</td>
+            <td><input type="radio" name="gender" id="female" value="female">
+                <label for="female">زن</label>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">مرد</label>
+            </td>
+            <td rowspan="2"> زبانهای برنامه نویسی:</td>
+            <td rowspan="2"><input type="range" name="HtmlCss" id="HtmlCss">
+                <label for="HtmlCss">HTMl and CSS</label>
+
+                <br><input type="range" name="JavaScript" id="JavaScript">
+                <label for="JavaScript">JavaScript</label>
+
+                <br><input type="range" name="PHP" id="PHP">
+                <label for="PHP">PHP</label>
+
+                <br><input type="range" name="MySQL" id="MySQL">
+                <label for="MySQL">MySQL</label>
+            </td>
+
+        </tr>
+        <tr>
+            <td>وضعیت تاهل:</td>
+            <td><input type="radio" name="maritalStatus" id="single" value="single">
+                <label for="single">مجرد</label>
+                <input type="radio" name="maritalStatus" id="married" value="married">
+                <label for="married">متاهل</label>
+            </td>
+
+            <td rowspan="2"> رشته تحصیلی*:</td>
+            <td rowspan="2"><input type="text" required name="major"></td>
+        </tr>
+
+        <tr>
+            <td>ملیت:</td>
+            <td><input type="text" name="nationality"></td>
+            <td rowspan="3">سوابق شغلی:</td>
+            <td>عنوان شغلی:</td>
+            <td><input type="text" name="occupation"></td>
+
+        </tr>
+
+        <tr>
+            <td>تاریخ تولد:</td>
+            <td><input type="date" name="birthDate"></td>
+
+            <td rowspan="2">نام دانشگاه:</td>
+            <td rowspan="2"><input type="text" name="university"></td>
+            <td>نام سازمان:</td>
+            <td><input type="text" name="organization"></td>
+        </tr>
+
+        <tr>
+            <td>شماره تماس*:</td>
+            <td><input type="tel" min="8" max="14" required name="phoneNumber"></td>
+            <td colspan="2"><input type="checkbox" name="active" id="active">
+                <label for="active"> هنوز در این شرکت مشغول به کار هستم.</label></td>
+        </tr>
+
+        <tr>
+            <td height="70px">آدرس:</td>
+            <td>
+                <textarea name="address" style="height: 60px"></textarea>
+            </td>
+            <td colspan="2">
+                <input type="text" placeholder="سال شروع" name="start">
+                <input type="text" placeholder="سال پایان" name="end">
+            </td>
+            <td>درباره من:</td>
+            <td colspan="2">
+                <textarea name="information" style="height: 60px; width: 350px"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="7">
+                <button> پاک کردن فرم</button>
+                <button>ثبت</button>
+            </td>
+
+        </tr>
+    </table>
+</form>
+</body>
+</html>
