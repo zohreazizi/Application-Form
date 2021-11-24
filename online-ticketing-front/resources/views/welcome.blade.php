@@ -106,10 +106,11 @@
         }
     </style>
 </head>
-<body dir="rtl" style="background-color: #f8f4f438">
+<body dir="rtl" style="background-color: #f8f4f438;overflow-x: hidden">
+{{--navbar--}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light"
      style="background-color: #f8f4f4 !important;box-shadow: 0px 6px 12px rgb(32 65 90 / 10%), 0px 1px 4px rgb(32 65 90 / 10%);">
-    <a class="navbar-brand" href="#">خانه</a>
+    <a class="navbar-brand" id="home" href="#">خانه</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -125,10 +126,10 @@
         </ul>
     </div>
 </nav>
-<div class="row">
-    <div class="col-lg-7">
-        <img id="city" src="{{url('/images/5.jpg')}}" alt="f"/>
-
+{{--landing page info--}}
+<div class="row" style="margin-top: 40px;">
+    <div class="col-lg-8">
+{{--        <img id="city" src="{{url('/images/5.jpg')}}" alt="f"/>--}}
     </div>
     <div class="col-lg-4 align-self-center">
         <div>
@@ -140,6 +141,7 @@
         </div>
     </div>
 </div>
+{{--searchbar--}}
 <div>
     <div class="col-lg-12 ">
         <div class="justify-content-end mr-3"
@@ -159,11 +161,11 @@
         </div>
     </div>
 </div>
-
+{{--search results--}}
 <div id="third-section">
     <div id="hidden" class="col-lg-12"></div>
 </div>
-{{--hidden after submit--}}
+{{--comments:hidden after search--}}
 <div class="row" id="companies">
     <div class="col-lg-6" style="display: flex;justify-content: center;">
         <div id="slider" style="height: 400px; width: 100%">
@@ -258,7 +260,6 @@
                 success: function (data) {
                     console.log(data.data);
                     if (data.data.length === 0) {
-
                         $('#hidden').append('       <div id="not-found">\
                             <h1>هیچ سفری با این مشخصات پیدا نشد</h1>\
                     </div>')
@@ -285,21 +286,20 @@
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log(XMLHttpRequest.responseText);
                 },
-
             });
         });
-        $('#reserve-btn').click(function (e) {
-            var ticket = $(this).attr("value");
-            // alert(ticket);
+
+//---------------------- show available rides------------------------//
+
+        $(document).on('click', '#reserve-btn', function (e) {
             e.preventDefault();
+            var ticket = $(this).val();
             $.ajax({
-                url: "http://127.0.0.1:7000/api/rides",
-                type: 'POST',
+                url: "http://127.0.0.1:7000/api/ticket",
+                type: 'post',
                 dataType: "json",
                 data: {
-                    departure_place: departure_place,
-                    arrival_place: arrival_place,
-                    departure_date: departure_date
+                    ticket: ticket,
                 },
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -316,6 +316,8 @@
     })
 
 </script>
+
+
 {{--Persian datepicker--}}
 <script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
 <script src="js/jquery-1.10.1.min.js"></script>
@@ -342,7 +344,7 @@
         alwaysShow: !1,
         selectableYears: null,
         selectableMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-        cellWidth: 78,
+        cellWidth: 52,
         cellHeight: 39,
         fontSize: 18,
         isRTL: !1,
@@ -356,11 +358,8 @@
         onRender: function () { }
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
