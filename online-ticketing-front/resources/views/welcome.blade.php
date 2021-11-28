@@ -104,9 +104,27 @@
             justify-content: center;
             margin-top: 25px;
         }
+        .seat{
+            height: 15px;
+            width: 15px;
+            margin: 2px;
+            background-color: #3d4852;
+        }
+        .seats-col{
+            width: 20%;
+        }
+        #seats-container{
+            background-color: lightblue;
+            margin: 20px;
+            direction: ltr;
+            padding: 10px;
+        }
+        .single-seat{
+            margin-top: 5px;
+        }
     </style>
 </head>
-<body dir="rtl" style="background-color: #f8f4f438;overflow-x: hidden">
+<body dir="rtl" style="background-color: #f8f4f438;overflow-x: hidden;margin-left: 0 !important;">
 {{--navbar--}}
 <nav class="navbar navbar-expand-lg navbar-light bg-light"
      style="background-color: #f8f4f4 !important;box-shadow: 0px 6px 12px rgb(32 65 90 / 10%), 0px 1px 4px rgb(32 65 90 / 10%);">
@@ -143,8 +161,8 @@
 </div>
 {{--searchbar--}}
 <div>
-    <div class="col-lg-12 ">
-        <div class="justify-content-end mr-3"
+    <div class="col-lg-12 mx-auto">
+        <div class="justify-content-end "
              style="padding: 17px 113px;display: flex;border-radius: 3px;box-shadow: 0 6px 12px rgb(32 65 90 / 10%), 0px 1px 4px rgb(32 65 90 / 10%);">
             <div class="input-group mx-auto" style="width: 70%">
                 <div class="input-group-prepend">
@@ -165,161 +183,170 @@
 <div id="third-section">
     <div id="hidden" class="col-lg-12"></div>
 </div>
-{{--comments:hidden after search--}}
-<div class="row" id="companies">
-    <div class="col-lg-6" style="display: flex;justify-content: center;">
-        <div id="slider" style="height: 400px; width: 100%">
-            <div style="margin-right: 120px;margin-top: 20px;" id="carouselExampleIndicators" class="carousel slide"
-                 data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="{{url('/images/sl.jpg')}}" alt="First slide">
-                        <div class="carousel-caption">
-                            <h5>آرتا سبلان پایانه غرب
-                            </h5>
-                            <p id="carousel-text"> تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد
-                                و زمان مورد نیاز
-                                شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد
-                                استفاده قرار گیرد.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{url('/images/sl.jpg')}}" alt="Second slide">
-                        <div class="carousel-caption">
-                            <h5>تعاونى 11 ترمينال غرب
-                            </h5>
-                            <p id="carousel-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-                                استفاده از طراحان گرافیک
-                                است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط
-                                فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
-                                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
-                                طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و
-                                فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری
-                                موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی
-                                دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار
-                                گیرد.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{url('/images/sl.jpg')}}" alt="Third slide">
-                        <div class="carousel-caption">
-                            <h5>سير و سفر
-                            </h5>
-                            <p id="carousel-text">با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-                                خلاقی و فرهنگ
-                                پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در
-                                ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای
-                                اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+    <div id="seats-container">
+        <div class="seats-col">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat single-seat"></div>
         </div>
     </div>
-    <div class="col-lg-6">
-        <h1 id="our-companies">شرکت های طرف قرارداد ما</h1>
-    </div>
-</div>
+{{--comments:hidden after search--}}
+{{--<div class="row" id="companies">--}}
+{{--    <div class="col-lg-6" style="display: flex;justify-content: center;">--}}
+{{--        <div id="slider" style="height: 400px; width: 100%">--}}
+{{--            <div style="margin-right: 120px;margin-top: 20px;" id="carouselExampleIndicators" class="carousel slide"--}}
+{{--                 data-ride="carousel">--}}
+{{--                <ol class="carousel-indicators">--}}
+{{--                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>--}}
+{{--                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>--}}
+{{--                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>--}}
+{{--                </ol>--}}
+{{--                <div class="carousel-inner">--}}
+{{--                    <div class="carousel-item active">--}}
+{{--                        <img class="d-block w-100" src="{{url('/images/sl.jpg')}}" alt="First slide">--}}
+{{--                        <div class="carousel-caption">--}}
+{{--                            <h5>آرتا سبلان پایانه غرب--}}
+{{--                            </h5>--}}
+{{--                            <p id="carousel-text"> تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد--}}
+{{--                                و زمان مورد نیاز--}}
+{{--                                شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد--}}
+{{--                                استفاده قرار گیرد.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="carousel-item">--}}
+{{--                        <img class="d-block w-100" src="{{url('/images/sl.jpg')}}" alt="Second slide">--}}
+{{--                        <div class="carousel-caption">--}}
+{{--                            <h5>تعاونى 11 ترمينال غرب--}}
+{{--                            </h5>--}}
+{{--                            <p id="carousel-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با--}}
+{{--                                استفاده از طراحان گرافیک--}}
+{{--                                است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط--}}
+{{--                                فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،--}}
+{{--                                کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می--}}
+{{--                                طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و--}}
+{{--                                فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری--}}
+{{--                                موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی--}}
+{{--                                دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار--}}
+{{--                                گیرد.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="carousel-item">--}}
+{{--                        <img class="d-block w-100" src="{{url('/images/sl.jpg')}}" alt="Third slide">--}}
+{{--                        <div class="carousel-caption">--}}
+{{--                            <h5>سير و سفر--}}
+{{--                            </h5>--}}
+{{--                            <p id="carousel-text">با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان--}}
+{{--                                خلاقی و فرهنگ--}}
+{{--                                پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در--}}
+{{--                                ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای--}}
+{{--                                اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">--}}
+{{--                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+{{--                    <span class="sr-only">Previous</span>--}}
+{{--                </a>--}}
+{{--                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">--}}
+{{--                    <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+{{--                    <span class="sr-only">Next</span>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="col-lg-6">--}}
+{{--        <h1 id="our-companies">شرکت های طرف قرارداد ما</h1>--}}
+{{--    </div>--}}
+{{--</div>--}}
 {{--Sending ajax request to API endpoint--}}
-<script>
-    $(document).ready(function () {
-        $('#ajaxSubmit').click(function (e) {
-            $('#companies').hide();
-            $('#hidden').empty();
-            var departure_place = $("#departure_place").val();
-            var arrival_place = $("#arrival_place").val();
-            var departure_date = moment.from($("#departure_date").val(), 'fa', 'YYYY/MM/DD').locale('en').format('YYYY/MM/DD');
-            e.preventDefault();
+{{--<script>--}}
+{{--    $(document).ready(function () {--}}
+{{--        $('#ajaxSubmit').click(function (e) {--}}
+{{--            $('#companies').hide();--}}
+{{--            $('#hidden').empty();--}}
+{{--            var departure_place = $("#departure_place").val();--}}
+{{--            var arrival_place = $("#arrival_place").val();--}}
+{{--            var departure_date = moment.from($("#departure_date").val(), 'fa', 'YYYY/MM/DD').locale('en').format('YYYY/MM/DD');--}}
+{{--            e.preventDefault();--}}
 
-            $.ajax({
-                url: "http://127.0.0.1:7000/api/rides",
-                type: 'POST',
-                dataType: "json",
-                data: {
-                    departure_place: departure_place,
-                    arrival_place: arrival_place,
-                    departure_date: departure_date
-                },
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                },
+{{--            $.ajax({--}}
+{{--                url: "http://127.0.0.1:7000/api/rides",--}}
+{{--                type: 'POST',--}}
+{{--                dataType: "json",--}}
+{{--                data: {--}}
+{{--                    departure_place: departure_place,--}}
+{{--                    arrival_place: arrival_place,--}}
+{{--                    departure_date: departure_date--}}
+{{--                },--}}
+{{--                headers: {--}}
+{{--                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')--}}
+{{--                },--}}
 
-                success: function (data) {
-                    console.log(data.data);
-                    if (data.data.length === 0) {
-                        $('#hidden').append('       <div id="not-found">\
-                            <h1>هیچ سفری با این مشخصات پیدا نشد</h1>\
-                    </div>')
-                    }
-                    $.each(data.data, function (key, item) {
-                        $('#hidden').append(' <div id="ticket" class="justify-content-end mr-3">\
-                            <div id="sub-ticket" class="mx-auto">\
-                            <div class="d-flex ticket-wrapper">\
-                            <span> </span>\
-                        <div id="price">' + item.price + '<span>تومان</span></div>\
-                    </div>\
-                        <div class="d-flex ticket-wrapper">\
-                            <div><img src="{{url('/images/dot.png')}}" class="icon-ticket">' + item.departure_time + '</div><span>' + item.departure_place + '</span>\
-                            <span><span>ظرفیت باقیمانده:</span>' + item.remaining_capacity + '</span>\
-                        </div>\
-                        <div class="d-flex ticket-wrapper">\
-                            <div><img src="{{url('/images/placeholder.png')}}" class="icon-ticket">' + item.arrival_time + '</div><span>' + item.arrival_place + '</span>\
-                            <span><button id="reserve-btn" value="' + item.id + '" class="btn btn-lg">رزرو</button></span>\
-                        </div>\
-                    </div>\
-                    </div>')
-                    })
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    console.log(XMLHttpRequest.responseText);
-                },
-            });
-        });
+{{--                success: function (data) {--}}
 
-//---------------------- show available rides------------------------//
+{{--                    console.log(data.data);--}}
+{{--                    if (data.data.length === 0) {--}}
+{{--                        $('#hidden').append('       <div id="not-found">\--}}
+{{--                            <h1>هیچ سفری با این مشخصات پیدا نشد</h1>\--}}
+{{--                    </div>')--}}
+{{--                    }--}}
 
-        $(document).on('click', '#reserve-btn', function (e) {
-            e.preventDefault();
-            var ticket = $(this).val();
-            $.ajax({
-                url: "http://127.0.0.1:7000/api/ticket",
-                type: 'post',
-                dataType: "json",
-                data: {
-                    ticket: ticket,
-                },
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                },
+{{--                    $.each(data.data, function (key, item) {--}}
+{{--                        $('#hidden').append(' <div id="ticket" class="justify-content-end mr-3">\--}}
+{{--                            <div id="sub-ticket" class="mx-auto">\--}}
+{{--                            <div class="d-flex ticket-wrapper">\--}}
+{{--                            <span> </span>\--}}
+{{--                        <div id="price">' + item.price + '<span>تومان</span></div>\--}}
+{{--                    </div>\--}}
+{{--                        <div class="d-flex ticket-wrapper">\--}}
+{{--                            <div><img src="{{url('/images/dot.png')}}" class="icon-ticket">' + item.departure_time + '</div><span>' + item.departure_place + '</span>\--}}
+{{--                            <span><span>ظرفیت باقیمانده:</span>' + item.remaining_capacity + '</span>\--}}
+{{--                        </div>\--}}
+{{--                        <div class="d-flex ticket-wrapper">\--}}
+{{--                            <div><img src="{{url('/images/placeholder.png')}}" class="icon-ticket">' + item.arrival_time + '</div><span>' + item.arrival_place + '</span>\--}}
+{{--                            <span><button id="reserve-btn" value="' + item.id + '" class="btn btn-lg">رزرو</button></span>\--}}
+{{--                        </div>\--}}
+{{--                    </div>\--}}
+{{--                    </div>')--}}
+{{--                    })--}}
+{{--                },--}}
+{{--                error: function (XMLHttpRequest, textStatus, errorThrown) {--}}
+{{--                    console.log(XMLHttpRequest.responseText);--}}
+{{--                },--}}
+{{--            });--}}
+{{--        });--}}
 
-                success: function (data) {
-                    console.log(data.data);
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    console.log(XMLHttpRequest.responseText);
-                },
-            });
-        })
-    })
+{{--//---------------------- show available rides------------------------//--}}
 
-</script>
+{{--        $(document).on('click', '#reserve-btn', function (e) {--}}
+{{--            e.preventDefault();--}}
+{{--            var ticket = $(this).val();--}}
+{{--            $.ajax({--}}
+{{--                url: "http://127.0.0.1:7000/api/ticket",--}}
+{{--                type: 'post',--}}
+{{--                dataType: "json",--}}
+{{--                data: {--}}
+{{--                    ticket: ticket,--}}
+{{--                },--}}
+{{--                headers: {--}}
+{{--                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')--}}
+{{--                },--}}
+
+{{--                success: function (data) {--}}
+{{--                    console.log(data.data);--}}
+{{--                },--}}
+{{--                error: function (XMLHttpRequest, textStatus, errorThrown) {--}}
+{{--                    console.log(XMLHttpRequest.responseText);--}}
+{{--                },--}}
+{{--            });--}}
+{{--        })--}}
+{{--    })--}}
+
+{{--</script>--}}
 
 
 {{--Persian datepicker--}}
-<script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
+{{--<script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>--}}
 <script src="js/jquery-1.10.1.min.js"></script>
 <script src="js/persianDatepicker.min.js"></script>
 <script type="text/javascript">
